@@ -2,7 +2,7 @@ body {
     background-color: #27ae60;
     color: #ecf0f1;
 }
-#mainblock {
+.centerblock {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -83,7 +83,7 @@ nav a:focus {
 	transform: translateY(0px);
 }
 @media only screen and (min-width: 481px) and (max-width: 900px) {
-  #mainblock {
+  .centerblock {
     width: 90%;
     height: 90%;
     margin: 0 auto;
