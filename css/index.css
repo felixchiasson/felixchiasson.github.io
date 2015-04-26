@@ -84,8 +84,9 @@ nav a:focus {
 }
 @media only screen and (min-width: 481px) and (max-width: 900px) {
   .centerblock {
-    width: 90%;
-    height: 90%;
+    position: relative;
+    width: 60%;
+    height: 60%;
     margin: 0 auto;
     font-size: 72px;
   }
