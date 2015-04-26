@@ -82,7 +82,12 @@ nav a:focus {
 	-moz-transform: translateY(0px);
 	transform: translateY(0px);
 }
-@media only screen and (min-width: 481px) and (max-width: 900px) {
+
+/* iPhone 6 in portrait and landscape */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
   .centerblock {
     position: relative;
     width: 60%;
