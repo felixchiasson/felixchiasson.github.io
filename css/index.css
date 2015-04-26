@@ -82,3 +82,10 @@ nav a:focus {
 	-moz-transform: translateY(0px);
 	transform: translateY(0px);
 }
+@media only screen and (min-width: 481px) and (max-width: 900px) {
+  #mainblock {
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+  }
+}
