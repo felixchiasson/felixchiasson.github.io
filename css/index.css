@@ -90,8 +90,8 @@ nav a:focus {
   and (-webkit-min-device-pixel-ratio: 2) {
   .centerblock {
     position: fixed;
-    top: 30%;
-    left: 30%;
-    transform: translate(-30%, -30%);
+    top: 25%;
+    left: 25%;
+    transform: translate(-25%, -25%);
   }
 }
