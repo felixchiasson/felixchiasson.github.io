@@ -87,7 +87,6 @@ nav a:focus {
     position: relative;
     width: 60%;
     height: 60%;
-    margin: 0 auto;
     font-size: 72px;
   }
 }
