@@ -1,5 +1,8 @@
 ---
 ---
+
+$link-colour: #696969;
+
 .hello-css {
     display: block;
 }
@@ -25,6 +28,7 @@ nav {
     a {
         font-family: "Merriweather", serif;
         text-decoration: none;
+        color: $link-colour;
 
         &:hover {
             font-family: "Oxygen", sans-serif;
