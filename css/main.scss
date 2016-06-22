@@ -6,7 +6,7 @@ $link-colour: #2a3439;
 div {
     display: block;
 
-    .main-container {
+    &.main-container {
         width: 500px;
         height: 500px;
         position: fixed;
