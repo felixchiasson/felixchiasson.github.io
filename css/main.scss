@@ -2,6 +2,19 @@
     display: block;
 }
 
-.nav-top {
+div {
     display: block;
+
+    .main-container {
+        width: 700px;
+        height: 700px;
+    }
+
+    .nav-bar {
+        margin: 0;
+        position: absolute;
+        top: 58%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
