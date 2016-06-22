@@ -1,0 +1,23 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 120px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    background:
+    url('http://i.imgur.com/1BB0H0f.jpg')
+    center center no-repeat;
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Titillium Web', sans-serif;
+    text-transform: uppercase;
+}
