@@ -3,16 +3,13 @@
 
 $link-colour: #2a3439;
 
-.hello-css {
-    display: block;
-}
-
 div {
     display: block;
 
     .main-container {
-        width: 700px;
-        height: 700px;
+        width: 500px;
+        height: 500px;
+        position: fixed;
     }
 
     .nav-bar {
@@ -20,6 +17,13 @@ div {
         position: absolute;
         top: 58%;
         left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #hello-css {
+        top: 46%;
+        left: 50%;
+        position: absolute;
         transform: translate(-50%, -50%);
     }
 }
