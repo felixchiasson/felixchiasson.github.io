@@ -24,5 +24,10 @@ div {
 nav {
     a {
         font-family: "Merriweather", serif;
+        text-decoration: none;
+
+        &:hover {
+            font-family: "Oxygen", sans-serif;
+        }
     }
 }
