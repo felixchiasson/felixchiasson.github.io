@@ -1,2 +1,4 @@
 source: _site
 include: ['_pages']
+gems:
+    - jekyll-haml
