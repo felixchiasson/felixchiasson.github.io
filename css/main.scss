@@ -3,6 +3,17 @@
 
 $link-colour: #2a3439;
 $pale-gray: #fdfdfd;
+$pale-green: #87CF87;
+
+// Mixin to prefix a property
+@mixin prefix($property, $value, $prefixes: ()) {
+    @each $prefix in $prefixes {
+        #{'-' + $prefix + '-' + $property}: $value;
+    }
+
+    // Output standard non-prefixed declaration
+    #{$property}: $value;
+}
 
 body {
     width: 95vw;
@@ -28,7 +39,7 @@ div {
         position: absolute;
         top: 58%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        @include prefix(transform, translate(-50%, -50%), moz webkit ms);
     }
 
     &.nav-bar {
@@ -39,7 +50,7 @@ div {
         top: 46%;
         left: 50%;
         position: absolute;
-        transform: translate(-50%, -50%);
+        @include prefix(transform, translate(-50%, -50%), moz webkit ms);
     }
 }
 
@@ -48,8 +59,11 @@ nav {
         font-family: "Merriweather", serif;
         text-decoration: none;
         color: $link-colour;
+        @include prefix(transition, .5s, moz webkit ms);
+
 
         &:hover {
+            color: $pale-green;
         }
     }
 }
