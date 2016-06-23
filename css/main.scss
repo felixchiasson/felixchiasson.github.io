@@ -20,6 +20,10 @@ div {
         transform: translate(-50%, -50%);
     }
 
+    &.nav-bar {
+        z-index: 1;
+    }
+
     #hello-css {
         top: 46%;
         left: 50%;
