@@ -3,12 +3,20 @@
 
 $link-colour: #2a3439;
 
+body {
+    width: 95vw;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 div {
     display: block;
 
     &.main-container {
         width: 500px;
         height: 500px;
+        margin: auto;
         position: relative;
     }
 
