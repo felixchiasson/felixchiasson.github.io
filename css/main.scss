@@ -67,7 +67,7 @@ nav {
     }
 }
 
-_::-webkit-:not(:root:root), .safari-fix {
+_::-webkit-:not(:root:root), .hello-css {
     @include prefix(transform, translate(-50%, -50%) scale(2), webkit);
     zoom: 0.5;
 }
