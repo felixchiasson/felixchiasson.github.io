@@ -66,3 +66,13 @@ nav {
         }
     }
 }
+
+_::-webkit-:not(:root:root), .#hello-css {
+    @include prefix(transform, translate(-50%, -50%) scale(2), webkit);
+    zoom: 0.5;
+}
+
+_::-webkit-:not(:root:root), .nav-bar {
+    @include prefix(transform, translate(-50%, -50%) scale(1.7), webkit);
+    zoom: 0.5;
+}
