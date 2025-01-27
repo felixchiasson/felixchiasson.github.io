@@ -145,6 +145,46 @@
             .fa-bluesky:hover {
                 color: #0085ff;
             }
+
+            @media (max-width: 768px) {
+                .text-original {
+                    display: none;
+                }
+
+                .text-alternate {
+                    opacity: 1;
+                    transform: translate(-50%, 0);
+                }
+
+                .handwriting {
+                    animation:
+                        draw 1s forwards,
+                        writeIn 1s forwards;
+                    background: linear-gradient(
+                        to right,
+                        #333 50%,
+                        transparent 50%
+                    );
+                    background-size: 200% 100%;
+                    background-position: 100% 0;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                .text-swap:hover .text-original,
+                .text-swap:hover .text-alternate,
+                .text-swap:hover .handwriting {
+                    animation: none;
+                    opacity: 1;
+                    transform: translate(-50%, 0);
+                }
+            }
+
+            @media (max-width: 480px) {
+                .handwriting {
+                    font-size: 2.5rem;
+                }
+            }
         </style>
     </head>
     <body>
