@@ -47,53 +47,6 @@
                 padding: 2rem;
             }
 
-            .landing-content::before {
-                content: "";
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                border: 2px solid #424242;
-                opacity: 0;
-                transform: translate(-50%, -50%);
-                width: 300px;
-                height: 200px;
-                border-radius: 15px;
-                animation: drawBox 2s forwards;
-                animation-delay: 2s;
-            }
-
-            @keyframes drawBox {
-                0% {
-                    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-                    opacity: 1;
-                }
-                20% {
-                    /* Start position */
-                    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
-                }
-                35% {
-                    /* Draw top line */
-                    clip-path: polygon(0 0, 100% 0, 100% 0, 100% 0);
-                }
-                55% {
-                    /* Draw right line */
-                    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%);
-                }
-                75% {
-                    /* Draw bottom line */
-                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-                }
-                90% {
-                    /* Draw left line from bottom to top */
-                    clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
-                }
-                100% {
-                    /* Complete the box */
-                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-                    opacity: 1;
-                }
-            }
-
             .body-content {
                 min-height: 100vh;
                 padding: 2rem;
@@ -226,6 +179,46 @@
                 }
             }
 
+            .scroll-indicator {
+                position: absolute;
+                bottom: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+                animation: bounce 2s infinite;
+                color: #424242;
+                font-size: 1.5rem;
+                opacity: 0;
+                animation:
+                    bounce 2s infinite,
+                    fadeIn 1s forwards;
+                animation-delay: 3s; /* Start after other animations complete */
+            }
+
+            @keyframes bounce {
+                0%,
+                20%,
+                50%,
+                80%,
+                100% {
+                    transform: translateY(0) translateX(-50%);
+                }
+                40% {
+                    transform: translateY(-10px) translateX(-50%);
+                }
+                60% {
+                    transform: translateY(-5px) translateX(-50%);
+                }
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
             @media (min-width: 769px) {
                 .text-original {
                     animation: slideOutUp 1.5s ease forwards;
@@ -317,6 +310,9 @@
                 <a href="https://linkedin.com/in/felixchiasson" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
             </div>
         </div>
 
