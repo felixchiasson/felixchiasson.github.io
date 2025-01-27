@@ -11,16 +11,15 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sacramento&display=swap"
             rel="stylesheet"
         />
 
         <style>
-            @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
             body {
                 margin: 0;
                 padding: 0;
-                height: 100vh;
+                min-height: 100vh;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -29,6 +28,35 @@
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
                     "Helvetica Neue", sans-serif;
+                overflow-y: auto;
+            }
+
+            .landing-content {
+                height: 100vh;
+                display: flex;
+                top: 0;
+                left: 0;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: fixed;
+                width: 100%;
+                transition:
+                    opacity 0.5s ease,
+                    transform 0.5s ease;
+            }
+
+            .body-content {
+                min-height: 100vh;
+                padding: 2rem;
+                z-index: 1;
+                position: relative;
+                margin-top: 100vh; /* This pushes it below the landing content */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 50%;
             }
 
             .handwriting {
@@ -36,7 +64,7 @@
                 font-size: 3.5rem; /* Slightly larger to match original size */
                 stroke-dasharray: 1000;
                 stroke-dashoffset: 1000;
-                -webkit-text-stroke: 1px #333;
+                -webkit-text-stroke: 1px #424242;
             }
 
             @keyframes draw {
@@ -47,17 +75,25 @@
 
             h1 {
                 font-size: 3rem;
-                color: #333;
+                color: #424242;
                 margin-bottom: 2rem;
                 font-weight: 300;
                 height: 3rem;
                 text-align: center;
-            }
-            .text-swap {
                 position: relative;
-                display: inline-block;
-                cursor: pointer;
-                height: 3rem;
+            }
+
+            .body-content h2 {
+                border-bottom: 2px dotted rgba(51, 51, 51, 0.5);
+                font-family: Rubik;
+                color: #424242;
+            }
+
+            .body-content p {
+                font-family: Lato;
+                text-align: justify;
+                line-height: 1.6;
+                color: #424242;
             }
 
             .text {
@@ -93,7 +129,7 @@
             }
 
             .social-icons a {
-                color: #333;
+                color: #424242;
                 font-size: 1.8rem;
                 text-decoration: none;
                 transition: all 0.3s ease;
@@ -101,7 +137,7 @@
 
             .social-icons a:hover {
                 transform: translateY(-5px);
-                color: #333;
+                color: #424242;
             }
 
             .fa-github-alt:hover {
@@ -155,7 +191,7 @@
                 .handwriting {
                     background: linear-gradient(
                         to right,
-                        #333 50%,
+                        #424242 50%,
                         transparent 50%
                     );
                     background-size: 200% 100%;
@@ -185,7 +221,7 @@
                         writeIn 1s forwards;
                     background: linear-gradient(
                         to right,
-                        #333 50%,
+                        #424242 50%,
                         transparent 50%
                     );
                     background-size: 200% 100%;
@@ -201,6 +237,9 @@
                     opacity: 1;
                     transform: translate(-50%, 0);
                 }
+                .body-content {
+                    width: 80%;
+                }
             }
 
             @media (max-width: 480px) {
@@ -211,26 +250,68 @@
         </style>
     </head>
     <body>
-        <h1>
-            <span class="text-swap">
+        <div class="landing-content">
+            <h1>
                 <span class="text text-original">Félix Chiasson</span>
                 <span class="text text-alternate handwriting">hello.</span>
-            </span>
-        </h1>
+            </h1>
 
-        <div class="social-icons">
-            <a href="https://github.com/felixchiasson" target="_blank">
-                <i class="fab fa-github-alt"></i>
-            </a>
-            <a href="mailto:felix@chiasson.email">
-                <i class="fa-solid fa-paper-plane"></i>
-            </a>
-            <a href="https://bsky.app/profile/f20cd2.sh" target="_blank">
-                <i class="fa-brands fa-bluesky"></i>
-            </a>
-            <a href="https://linkedin.com/in/felixchiasson" target="_blank">
-                <i class="fab fa-linkedin-in"></i>
-            </a>
+            <div class="social-icons">
+                <a href="https://github.com/felixchiasson" target="_blank">
+                    <i class="fab fa-github-alt"></i>
+                </a>
+                <a href="mailto:felix@chiasson.email">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </a>
+                <a href="https://bsky.app/profile/f20cd2.sh" target="_blank">
+                    <i class="fa-brands fa-bluesky"></i>
+                </a>
+                <a href="https://linkedin.com/in/felixchiasson" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
         </div>
+
+        <div class="body-content">
+            <h2>About Me</h2>
+            <p>
+                I am a data analyst currently working for the Government of
+                Canada in Montreal, QC. On a day-to-day basis, I use R and SQL
+                to assist in the Employment and Social Development Canada's
+                quality assurance programs. In my free time, I enjoy working on
+                personal projects in Rust.
+            </p>
+            <p><i class="fa-brands fa-canadian-maple-leaf"></i></p>
+            <p>
+                Je suis un analyste des données pour le gouvernement du Canada,
+                basé à Montréal, QC. Au quotidien, j'utilise R et SQL comme
+                outil principaux à l'analyse des programmes d'assurance qualité
+                d'Emploi et Développement social Canada. Dans mes temps libres,
+                j'aiguise mes abilités en Rust.
+            </p>
+            <p>我也说普通话</p>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const mainContent = document.querySelector(".landing-content");
+                let lastScrollPosition = 0;
+
+                window.addEventListener("scroll", () => {
+                    const currentScroll = window.pageYOffset;
+                    const scrollDelta = currentScroll - lastScrollPosition;
+
+                    const opacity = Math.max(
+                        0,
+                        1 - currentScroll / (window.innerHeight * 0.5),
+                    );
+                    const translateY = -currentScroll * 0.3;
+
+                    mainContent.style.opacity = opacity;
+                    mainContent.style.transform = `translateY(${translateY}px)`;
+
+                    lastScrollPosition = currentScroll;
+                });
+            });
+        </script>
     </body>
 </html>
