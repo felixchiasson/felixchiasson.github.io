@@ -1,6 +1,166 @@
----
-layout: default
----
-<div class="hello-css">
-    <h1>Hello.</h1>
-</div>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Felix Chiasson</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        />
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #fafafa;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+                    "Helvetica Neue", sans-serif;
+            }
+
+            .handwriting {
+                font-family: "Sacramento", cursive;
+                font-size: 3.5rem; /* Slightly larger to match original size */
+                stroke-dasharray: 1000;
+                stroke-dashoffset: 1000;
+                -webkit-text-stroke: 1px #333;
+            }
+
+            @keyframes draw {
+                to {
+                    stroke-dashoffset: 0;
+                }
+            }
+
+            h1 {
+                font-size: 3rem;
+                color: #333;
+                margin-bottom: 2rem;
+                font-weight: 300;
+                height: 3rem;
+                text-align: center;
+            }
+            .text-swap {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                height: 3rem;
+            }
+
+            .text {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                transition:
+                    opacity 0.3s ease,
+                    transform 0.3s ease;
+                white-space: nowrap;
+            }
+
+            .text-original {
+                opacity: 1;
+                transform: translateY(0);
+                transform: translate(-50%, 0);
+            }
+
+            .text-alternate {
+                opacity: 0;
+                transform: translate(-50%, 20px);
+            }
+
+            .text-swap:hover .text-original {
+                opacity: 0;
+                transform: translate(-50%, -20px);
+            }
+
+            .text-swap:hover .text-alternate {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+
+            .text-swap:hover .handwriting {
+                animation: draw 1s forwards;
+                background: linear-gradient(
+                    to right,
+                    #333 50%,
+                    transparent 50%
+                );
+                background-size: 200% 100%;
+                background-position: 100% 0;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation:
+                    draw 1s forwards,
+                    writeIn 1s forwards;
+            }
+
+            @keyframes writeIn {
+                to {
+                    background-position: 0 0;
+                }
+            }
+
+            .social-icons {
+                display: flex;
+                gap: 2rem;
+            }
+
+            .social-icons a {
+                color: #333;
+                font-size: 1.8rem;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+
+            .social-icons a:hover {
+                transform: translateY(-5px);
+                color: #333;
+            }
+
+            .fa-github:hover {
+                color: #24292e;
+            }
+
+            .fa-envelope:hover {
+                color: #6d4aff;
+            }
+
+            .fa-linkedin:hover {
+                color: #0077b5;
+            }
+
+            .fa-bluesky:hover {
+                color: #0085ff;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            <span class="text-swap">
+                <span class="text text-original">Félix Chiasson</span>
+                <span class="text text-alternate handwriting">hello.</span>
+            </span>
+        </h1>
+
+        <div class="social-icons">
+            <a href="https://github.com/felixchiasson" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:felix@chiasson.email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://bsky.app/profile/f20cd2.sh" target="_blank">
+                <i class="fa-brands fa-bluesky"></i>
+            </a>
+            <a href="https://linkedin.com/in/felixchiasson" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+    </body>
+</html>
