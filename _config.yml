@@ -2,3 +2,10 @@ source: _site
 include: ['_pages']
 gems:
     - jekyll-haml
+sass:
+  implementation: sass-embedded # Use the latest Sass implementation
+
+postcss:
+  cache: false # Regenerate CSS all the time for compatibility with Tailwind JIT
+
+    
