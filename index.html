@@ -32,18 +32,66 @@
             }
 
             .landing-content {
-                height: 100vh;
+                height: 80vh;
                 display: flex;
                 top: 0;
                 left: 0;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                position: fixed;
+                position: relative;
                 width: 100%;
                 transition:
                     opacity 0.5s ease,
                     transform 0.5s ease;
+                padding: 2rem;
+            }
+
+            .landing-content::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                border: 2px solid #424242;
+                opacity: 0;
+                transform: translate(-50%, -50%);
+                width: 300px;
+                height: 200px;
+                border-radius: 15px;
+                animation: drawBox 2s forwards;
+                animation-delay: 2s;
+            }
+
+            @keyframes drawBox {
+                0% {
+                    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+                    opacity: 1;
+                }
+                20% {
+                    /* Start position */
+                    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+                }
+                35% {
+                    /* Draw top line */
+                    clip-path: polygon(0 0, 100% 0, 100% 0, 100% 0);
+                }
+                55% {
+                    /* Draw right line */
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%);
+                }
+                75% {
+                    /* Draw bottom line */
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                }
+                90% {
+                    /* Draw left line from bottom to top */
+                    clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%);
+                }
+                100% {
+                    /* Complete the box */
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                    opacity: 1;
+                }
             }
 
             .body-content {
@@ -51,7 +99,7 @@
                 padding: 2rem;
                 z-index: 1;
                 position: relative;
-                margin-top: 100vh; /* This pushes it below the landing content */
+                margin-top: 20vh; /* This pushes it below the landing content */
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
