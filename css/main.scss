@@ -34,6 +34,7 @@ div {
     .nav-bar {
         margin: 0;
         position: absolute;
+        width: 300px;
         top: 58%;
         left: 50%;
         @include prefix(transform, translate(-50%, -50%), moz webkit ms);
